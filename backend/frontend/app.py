@@ -1,25 +1,24 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_cors import CORS  # Import CORS
 
-app = Flask(__name__)
+db = SQLAlchemy()
+migrate = Migrate()
 
-# Database URI
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'  # or other DB URI
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+def create_app():
+    app = Flask(__name__)
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# Initialize extensions
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+    CORS(app)  # Enable CORS for the whole app
 
-# Example model
-class CrimeReport(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    description = db.Column(db.String(255))
+    db.init_app(app)
+    migrate.init_app(app, db)
 
-@app.route('/')
-def home():
-    return 'Crime Alert App'
+    # import models and routes as usual
+    from .models import User, CrimeReport, CrimeLocation, UserLocation
+    from .routes import crime_alerts_bp
+    app.register_blueprint(crime_alerts_bp)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+    return app
