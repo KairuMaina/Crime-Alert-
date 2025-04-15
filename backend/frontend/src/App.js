@@ -1,30 +1,26 @@
-import React, { useEffect, useState } from "react";
-import CreateUser from "./CreateUser";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";  // Default import
+import Reports from "./pages/Reports";  // Default import
+import Admin from "./pages/Admin";  // Default import
+import Users from "./pages/Users";  // Default import
+import './App.css';
+
 
 function App() {
-  const [users, setUsers] = useState([]);
-
-  // Fetch users on load
-  useEffect(() => {
-    fetch("http://127.0.0.1:5000/api/users")
-      .then((res) => res.json())
-      .then((data) => setUsers(data))
-      .catch((err) => console.error("Error fetching users:", err));
-  }, []);
-
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>Crime Alert System</h1>
-      <CreateUser />  {/* Add CreateUser component */}
-      <h2>Users</h2>
-      <ul>
-        {users.map((user) => (
-          <li key={user.id}>
-            {user.name} ({user.email})
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Router>
+      <Navbar />
+      <div style={{ padding: "2rem" }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/reports" element={<Reports />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/users" element={<Users />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

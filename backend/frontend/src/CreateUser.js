@@ -4,41 +4,42 @@ function CreateUser() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
     fetch("http://127.0.0.1:5000/api/users", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email }),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to create user");
+        return res.json();
+      })
       .then((data) => {
         alert("User created!");
-        setName("");  // Reset form
-        setEmail("");  // Reset form
+        setName("");
+        setEmail("");
       })
-      .catch((err) => {
-        console.error("Error:", err);
-        alert("Error: " + err.message);
-      });
+      .catch((err) => console.error("Error:", err));
   };
 
   return (
     <form onSubmit={handleSubmit}>
+      <h3>Create New User</h3>
       <input
+        type="text"
+        placeholder="Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        placeholder="Name"
+        required
       />
       <input
+        type="email"
+        placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-        type="email"
+        required
       />
       <button type="submit">Add User</button>
     </form>
