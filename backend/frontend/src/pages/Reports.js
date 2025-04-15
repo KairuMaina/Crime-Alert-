@@ -1,18 +1,25 @@
 import React from 'react';
+import './Reports.css';
 
-const Reports = () => {
+const Reports = ({ reports = [] }) => {
   return (
-    <div>
-      <h1>Crime Reports</h1>
-      <p>
-        Below is a list of recent crime reports. You can use this page to stay informed
-        about crime activities in your area.
-      </p>
-      <ul>
-        <li>Report #1: Armed Robbery - Main Street</li>
-        <li>Report #2: Burglary - 5th Avenue</li>
-        <li>Report #3: Assault - Downtown Park</li>
-      </ul>
+    <div className="reports-container">
+      <h1 className="reports-title">Submitted Crime Reports</h1>
+      {reports.length === 0 ? (
+        <p className="no-reports">No reports submitted yet.</p>
+      ) : (
+        <div className="report-list">
+          {reports.map((report, index) => (
+            <div key={index} className="report-card">
+              <h2>{report.title}</h2>
+              <p><strong>Location:</strong> {report.location}</p>
+              <p><strong>Date:</strong> {report.date}</p>
+              <p><strong>Description:</strong> {report.description}</p>
+              <p><strong>Reported By:</strong> {report.name} (ID: {report.id})</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

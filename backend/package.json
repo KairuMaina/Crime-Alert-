@@ -1,5 +1,13 @@
 {
+  "name": "crime-alert",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "react-scripts start",   // This is the default development script
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
-    "axios": "^1.8.4"
+    // your dependencies here
   }
 }
