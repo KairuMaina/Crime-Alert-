@@ -26,7 +26,7 @@ const App = () => {
             <Route path="/users" element={<Users />} />
           </Routes>
         </div>
-        <Footer /> {/* ✅ include the footer below all routes */}
+      
       </div>
     </Router>
   );

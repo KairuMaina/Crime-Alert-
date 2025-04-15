@@ -47,3 +47,15 @@ class CrimeReportTag(db.Model):
     crime_report_id = db.Column(db.Integer, db.ForeignKey('crime_report.id'), primary_key=True)
     tag_id = db.Column(db.Integer, db.ForeignKey('tag.id'), primary_key=True)
     user_note = db.Column(db.String(255))  # Optional extra note by the user
+
+from app import db
+
+class Alert(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    message = db.Column(db.String(300), nullable=False)
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "message": self.message
+        }
