@@ -1,0 +1,199 @@
+/* Overall layout for the Admin dashboard */
+.admin-dashboard {
+    background-color: #f4f4f4;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .admin-dashboard h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  /* Action List for the Admin */
+  .admin-actions {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .admin-actions ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .admin-actions li {
+    background-color: #3498db;
+    color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .admin-actions li:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Alerts section for Government Alerts */
+  .alerts-section {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    margin-top: 30px;
+  }
+  
+  .alert-card {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .alert-card strong {
+    font-weight: bold;
+  }
+  
+  /* Styling for the No Reports section */
+  .no-reports {
+    font-size: 18px;
+    color: #7f8c8d;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  /* Additional styling for the report cards (if needed) */
+  .report-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .report-card h2 {
+    color: #2c3e50;
+  }
+  
+  .report-card p {
+    font-size: 16px;
+    color: #7f8c8d;
+  }
+  
+  /* Login page styling */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ecf0f1;
+  }
+  
+  .login-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .login-container input {
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7;
+    width: 250px;
+  }
+  
+  .login-container button {
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-container button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Admin Dashboard Styling */
+  .admin-dashboard {
+    background-color: #f4f4f4;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .admin-dashboard h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .admin-actions {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .admin-actions ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .admin-actions li {
+    background-color: #3498db;
+    color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .admin-actions li:hover {
+    background-color: #2980b9;
+  }
+  
+  .alerts-section {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    margin-top: 30px;
+  }
+  
+  .alert-card {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .alert-card strong {
+    font-weight: bold;
+  }
+  
