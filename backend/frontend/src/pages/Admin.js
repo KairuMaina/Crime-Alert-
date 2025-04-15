@@ -8,7 +8,6 @@ const Admin = () => {
   const [password, setPassword] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Check if the user is logged in from localStorage
   useEffect(() => {
     const storedLoginStatus = localStorage.getItem('adminLoggedIn');
     if (storedLoginStatus === 'true') {
@@ -25,7 +24,6 @@ const Admin = () => {
     }
   };
 
-  // Fetch alerts for the admin dashboard
   useEffect(() => {
     const fetchAlerts = async () => {
       try {
@@ -42,7 +40,6 @@ const Admin = () => {
     }
   }, [isLoggedIn]);
 
-  // Fetch crime reports
   useEffect(() => {
     const fetchReports = async () => {
       try {
@@ -72,9 +69,8 @@ const Admin = () => {
       if (response.ok) {
         alert('Alert sent successfully');
         setNewAlert('');
-        // Refresh alerts list
-        const updatedAlerts = await response.json();
-        setAlerts((prev) => [...prev, updatedAlerts]);
+        const updatedAlert = await response.json();
+        setAlerts((prev) => [...prev, updatedAlert]);
       } else {
         alert('Failed to send alert');
       }
@@ -101,12 +97,28 @@ const Admin = () => {
   return (
     <div className="admin-dashboard">
       <h1>Admin Dashboard</h1>
+
       <div className="admin-actions">
         <h2>Admin Actions</h2>
         <ul>
           <li>View Crime Reports</li>
           <li>Send Safety Alerts</li>
         </ul>
+      </div>
+
+      {/* Dashboard Summary Section */}
+      <div className="dashboard-summary" style={{ textAlign: 'center', margin: '2rem 0' }}>
+        <h2>System Summary</h2>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginTop: '1.5rem' }}>
+          <div className="summary-card" style={{ padding: '1rem 2rem', background: '#e3f2fd', borderRadius: '8px' }}>
+            <h3>Total Reports</h3>
+            <p style={{ fontSize: '2rem', fontWeight: 'bold' }}>{reports.length}</p>
+          </div>
+          <div className="summary-card" style={{ padding: '1rem 2rem', background: '#ffe0b2', borderRadius: '8px' }}>
+            <h3>Alerts Sent</h3>
+            <p style={{ fontSize: '2rem', fontWeight: 'bold' }}>{alerts.length}</p>
+          </div>
+        </div>
       </div>
 
       {reports.length > 0 && (
