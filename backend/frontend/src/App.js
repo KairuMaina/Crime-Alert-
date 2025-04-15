@@ -5,6 +5,7 @@ import Reports from './pages/Reports';
 import Admin from './pages/Admin';
 import Users from './pages/Users';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer'; // ✅ import footer
 
 const App = () => {
   const [reports, setReports] = useState([]);
@@ -15,13 +16,18 @@ const App = () => {
 
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home addReport={addReport} />} />
-        <Route path="/reports" element={<Reports reports={reports} />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/users" element={<Users />} />
-      </Routes>
+      <div className="app-container">
+        <Navbar />
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={<Home addReport={addReport} />} />
+            <Route path="/reports" element={<Reports reports={reports} />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/users" element={<Users />} />
+          </Routes>
+        </div>
+        <Footer /> {/* ✅ include the footer below all routes */}
+      </div>
     </Router>
   );
 };

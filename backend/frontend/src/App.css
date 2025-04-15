@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* App.css or index.css */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
