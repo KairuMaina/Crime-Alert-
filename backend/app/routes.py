@@ -1,5 +1,3 @@
-# backend/app/routes.py
-
 from flask import Blueprint, request, jsonify
 from app import db
 from app.models import User, CrimeReport, CrimeLocation, UserLocation
@@ -51,18 +49,14 @@ def create_report():
 @crime_alerts_bp.route('/reports', methods=['GET'])
 def get_reports():
     reports = CrimeReport.query.all()
-    return jsonify([
-        {
-            'id': r.id,
-            'description': r.description,
-            'date_reported': r.date_reported,
-            'user_id': r.user_id
-        } for r in reports
-    ]), 200
+    return jsonify([{
+        'id': r.id,
+        'description': r.description,
+        'date_reported': r.date_reported,
+        'user_id': r.user_id
+    } for r in reports]), 200
 
-# (You can add update/delete later for full CRUD.)
-
-# ------- (Optional) Location routes for stretch -------
+# (Optional) Location routes for stretch
 
 @crime_alerts_bp.route('/locations', methods=['POST'])
 def create_location():
@@ -75,7 +69,7 @@ def create_location():
 @crime_alerts_bp.route('/locations', methods=['GET'])
 def get_locations():
     locs = CrimeLocation.query.all()
-    return jsonify([
-        {'id': l.id, 'location_name': l.location_name}
-        for l in locs
-    ]), 200
+    return jsonify([{
+        'id': l.id,
+        'location_name': l.location_name
+    } for l in locs]), 200
