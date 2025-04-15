@@ -1,199 +1,107 @@
 /* Overall layout for the Admin dashboard */
 .admin-dashboard {
-    background-color: #f4f4f4;
-    padding: 20px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: Arial, sans-serif;
-  }
-  
-  .admin-dashboard h1 {
-    color: #2c3e50;
-    margin-bottom: 20px;
-  }
-  
-  /* Action List for the Admin */
-  .admin-actions {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
-    padding: 20px;
-    margin-bottom: 30px;
-  }
-  
-  .admin-actions ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .admin-actions li {
-    background-color: #3498db;
-    color: #fff;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .admin-actions li:hover {
-    background-color: #2980b9;
-  }
-  
-  /* Alerts section for Government Alerts */
-  .alerts-section {
-    width: 100%;
-    max-width: 600px;
-    padding: 20px;
-    margin-top: 30px;
-  }
-  
-  .alert-card {
-    background-color: #e74c3c;
-    color: #fff;
-    padding: 15px;
-    border-radius: 6px;
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-  
-  .alert-card strong {
-    font-weight: bold;
-  }
-  
-  /* Styling for the No Reports section */
-  .no-reports {
-    font-size: 18px;
-    color: #7f8c8d;
-    text-align: center;
-    margin-top: 30px;
-  }
-  
-  /* Additional styling for the report cards (if needed) */
-  .report-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    margin-bottom: 15px;
-  }
-  
-  .report-card h2 {
-    color: #2c3e50;
-  }
-  
-  .report-card p {
-    font-size: 16px;
-    color: #7f8c8d;
-  }
-  
-  /* Login page styling */
+  padding: 40px;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.admin-dashboard h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1a202c;
+}
+
+/* Admin Actions Section */
+.admin-actions {
+  margin-bottom: 30px;
+}
+
+.admin-actions h2 {
+  font-size: 1.5rem;
+  color: #2d3748;
+}
+
+.admin-actions ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.admin-actions li {
+  margin: 10px 0;
+  padding: 12px 20px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.admin-actions li:hover {
+  background-color: #edf2f7;
+}
+
+/* Alerts Section */
+.alerts-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #2b6cb0;
+}
+
+.alert-card {
+  background-color: #fff5f5;
+  border-left: 5px solid #e53e3e;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  color: #742a2a;
+}
+
+/* Login Page Styling */
 .login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #ecf0f1;
-  }
-  
-  .login-container h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .login-container input {
-    padding: 10px;
-    margin-bottom: 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #bdc3c7;
-    width: 250px;
-  }
-  
-  .login-container button {
-    padding: 10px;
-    background-color: #3498db;
-    color: #fff;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .login-container button:hover {
-    background-color: #2980b9;
-  }
-  
-  /* Admin Dashboard Styling */
-  .admin-dashboard {
-    background-color: #f4f4f4;
-    padding: 20px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: Arial, sans-serif;
-  }
-  
-  .admin-dashboard h1 {
-    color: #2c3e50;
-    margin-bottom: 20px;
-  }
-  
-  .admin-actions {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
-    padding: 20px;
-    margin-bottom: 30px;
-  }
-  
-  .admin-actions ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .admin-actions li {
-    background-color: #3498db;
-    color: #fff;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .admin-actions li:hover {
-    background-color: #2980b9;
-  }
-  
-  .alerts-section {
-    width: 100%;
-    max-width: 600px;
-    padding: 20px;
-    margin-top: 30px;
-  }
-  
-  .alert-card {
-    background-color: #e74c3c;
-    color: #fff;
-    padding: 15px;
-    border-radius: 6px;
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-  
-  .alert-card strong {
-    font-weight: bold;
-  }
-  
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-container input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #cbd5e0;
+}
+
+.login-container button {
+  padding: 10px 20px;
+  background-color: #2b6cb0;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.login-container button:hover {
+  background-color: #2c5282;
+}
+
+/* Sign-Out Button */
+.signout-button {
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 20px;
+}
+
+.signout-button:hover {
+  background-color: #c0392b;
+}
