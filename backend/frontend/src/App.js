@@ -5,7 +5,7 @@ import Reports from './pages/Reports';
 import Admin from './pages/Admin';
 import Users from './pages/Users';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer'; // ✅ import footer
+import Footer from './components/Footer';
 
 const App = () => {
   const [reports, setReports] = useState([]);
@@ -26,7 +26,7 @@ const App = () => {
             <Route path="/users" element={<Users />} />
           </Routes>
         </div>
-      
+        <Footer />
       </div>
     </Router>
   );
